@@ -12,6 +12,8 @@ markdown = "*"
 djangorestframework = "*"
 django-filter = "*"
 django-cors-headers = "*"
+django-rest-knox = "*"
+requests = "*"
 
 [requires]
 python_version = "3.8"
