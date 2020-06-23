@@ -37,10 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'rest_auth.registration',
     'django_filters',
     'corsheaders',
-    'knox',
-    'lifting'
+    'lifting',
 ]
 
 MIDDLEWARE = [
@@ -126,12 +132,16 @@ STATIC_URL = '/static/'
 
 # Rest Framework
 REST_FRAMEWORK = {
-   'DEFAULT_AUTHENTICATION_CLASSES': (
-       'rest_framework.authentication.TokenAuthentication',
-    ),    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+         'rest_framework.authentication.BasicAuthentication' ,)
 }
 
 # CORS
 CORS_ORIGIN_ALLOW_ALL = True
+
+# All Auth provides Sign in with Facebook, Google, etc
+SITE_ID = 1
+
+# Email Backend to print to console for now, no email provider
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = 'none'

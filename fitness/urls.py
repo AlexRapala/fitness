@@ -16,12 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from fitness import views
-from knox import views as knox_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('lifting/', include('lifting.urls')),
-    path('auth/login/', views.LoginView.as_view(), name='knox_login'),
-    path('auth/logout/', knox_views.LogoutView.as_view(), name='knox_logout'),
-    path('auth/logoutall/', knox_views.LogoutAllView.as_view(), name='knox_logoutall'),
+    path('auth/', include('rest_auth.urls')),
+    path('auth/registration/', include('rest_auth.registration.urls')),
 ]
