@@ -3,9 +3,9 @@ from rest_framework import routers
 from lifting import views
 
 router = routers.DefaultRouter()
-router.register('logs', views.LogViewSet)
-router.register('lifts', views.LiftViewSet)
-router.register('log_x_lift', views.LogXLiftViewSet)
+router.register('logs', views.LogViewSet, basename="logs")
+router.register('lifts', views.LiftViewSet, basename="lifts")
+router.register('log_x_lift', views.LogXLiftViewSet, basename="logxlift")
 
 
 # Wire up our API using automatic URL routing.
