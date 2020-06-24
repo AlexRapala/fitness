@@ -1,6 +1,6 @@
 #### Fitness App
 
-A simple Trianing Log for simple workouts
+A simple Training Log for simple workouts
 
 #### Running the server
 
