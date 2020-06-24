@@ -35,3 +35,4 @@ class LogXLiftSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.LogXLift
         fields = '__all__'
+        filterset_fields = ['log']

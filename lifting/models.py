@@ -13,5 +13,8 @@ class Lift(models.Model):
 class LogXLift(models.Model):
     log = models.ForeignKey(Log, on_delete=models.PROTECT)
     lift = models.ForeignKey(Lift, on_delete=models.PROTECT)
+    sets = models.IntegerField()
+    repetitions = models.IntegerField()
+    weight = models.DecimalField(max_digits=9, decimal_places=2)
     lifted_date = models.DateTimeField()
     created = models.DateTimeField(auto_now_add=True)
