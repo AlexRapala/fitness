@@ -14,6 +14,7 @@ django-filter = "*"
 django-cors-headers = "*"
 requests = "*"
 django-rest-auth = {extras = ["with_social"], version = "*"}
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
